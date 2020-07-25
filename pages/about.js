@@ -1,14 +1,23 @@
-import Link from 'next/link'
+import React from 'react';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
+import Link from '../src/Link';
+import Copyright from '../src/Copyright';
+
 export default function About() {
   return (
-    <div>
-      <div>About us</div>
-      <div>
-        Back to{' '}
-        <Link href="/" as={process.env.BACKEND_URL + '/'}>
-          <a>Home</a>
-        </Link>
-      </div>
-    </div>
-  )
+    <Container maxWidth="sm">
+      <Box my={4}>
+        <Typography variant="h4" component="h1" gutterBottom>
+        Optional Chaining
+        </Typography>
+        <Button variant="contained" color="primary" component={Link} naked href="/">
+          Go to the main page
+        </Button>
+        <Copyright />
+      </Box>
+    </Container>
+  );
 }
